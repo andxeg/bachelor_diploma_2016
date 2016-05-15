@@ -1,0 +1,244 @@
+<?xml version="1.0" ?>
+<dcxml name="">
+	<resources migration_time="100000">
+		<server name="computer1" service="0">
+			<connection_set number_of_ports="1">
+				<port name="computer1_port_0"/>
+			</connection_set>
+			<parameter_set>
+				<parameter parameter_name="VCPUs" parameter_type="integer" parameter_value="80"/>
+				<parameter parameter_name="RAM" parameter_type="integer" parameter_value="8000"/>
+			</parameter_set>
+		</server>
+		<storage name="controller1" service="0">
+			<connection_set number_of_ports="1">
+				<port name="controller1_port_0"/>
+			</connection_set>
+			<parameter_set>
+				<parameter parameter_name="size" parameter_type="real" parameter_value="20"/>
+			</parameter_set>
+		</storage>
+		<netelement is_router="0" name="SW5">
+			<connection_set number_of_ports="3">
+				<port name="SW5_port_0"/>
+				<port name="SW5_port_1"/>
+				<port name="SW5_port_2"/>
+			</connection_set>
+			<parameter_set/>
+		</netelement>
+		<netelement is_router="0" name="SW2">
+			<connection_set number_of_ports="3">
+				<port name="SW2_port_0"/>
+				<port name="SW2_port_1"/>
+				<port name="SW2_port_2"/>
+			</connection_set>
+			<parameter_set/>
+		</netelement>
+		<netelement is_router="0" name="SW6">
+			<connection_set number_of_ports="3">
+				<port name="SW6_port_0"/>
+				<port name="SW6_port_1"/>
+				<port name="SW6_port_2"/>
+			</connection_set>
+			<parameter_set/>
+		</netelement>
+		<server name="computer2" service="0">
+			<connection_set number_of_ports="1">
+				<port name="computer2_port_0"/>
+			</connection_set>
+			<parameter_set>
+				<parameter parameter_name="VCPUs" parameter_type="integer" parameter_value="60"/>
+				<parameter parameter_name="RAM" parameter_type="integer" parameter_value="10000"/>
+			</parameter_set>
+		</server>
+		<storage name="controller2" service="0">
+			<connection_set number_of_ports="1">
+				<port name="controller2_port_0"/>
+			</connection_set>
+			<parameter_set>
+				<parameter parameter_name="size" parameter_type="real" parameter_value="15"/>
+			</parameter_set>
+		</storage>
+		<netelement is_router="0" name="SW1">
+			<connection_set number_of_ports="3">
+				<port name="SW1_port_0"/>
+				<port name="SW1_port_1"/>
+				<port name="SW1_port_2"/>
+			</connection_set>
+			<parameter_set/>
+		</netelement>
+		<netelement is_router="0" name="SW3">
+			<connection_set number_of_ports="3">
+				<port name="SW3_port_0"/>
+				<port name="SW3_port_1"/>
+				<port name="SW3_port_2"/>
+			</connection_set>
+			<parameter_set/>
+		</netelement>
+		<server name="computer3" service="0">
+			<connection_set number_of_ports="1">
+				<port name="computer3_port_0"/>
+			</connection_set>
+			<parameter_set>
+				<parameter parameter_name="VCPUs" parameter_type="integer" parameter_value="80"/>
+				<parameter parameter_name="RAM" parameter_type="integer" parameter_value="8000"/>
+			</parameter_set>
+		</server>
+		<storage name="controller3" service="0">
+			<connection_set number_of_ports="1">
+				<port name="controller3_port_0"/>
+			</connection_set>
+			<parameter_set>
+				<parameter parameter_name="size" parameter_type="real" parameter_value="20"/>
+			</parameter_set>
+		</storage>
+		<netelement is_router="0" name="SW4">
+			<connection_set number_of_ports="3">
+				<port name="SW4_port_0"/>
+				<port name="SW4_port_1"/>
+				<port name="SW4_port_2"/>
+			</connection_set>
+			<parameter_set/>
+		</netelement>
+		<server name="computer4" service="0">
+			<connection_set number_of_ports="1">
+				<port name="computer4_port_0"/>
+			</connection_set>
+			<parameter_set>
+				<parameter parameter_name="VCPUs" parameter_type="integer" parameter_value="60"/>
+				<parameter parameter_name="RAM" parameter_type="integer" parameter_value="10000"/>
+			</parameter_set>
+		</server>
+		<storage name="controller4" service="0">
+			<connection_set number_of_ports="1">
+				<port name="controller4_port_0"/>
+			</connection_set>
+			<parameter_set>
+				<parameter parameter_name="size" parameter_type="real" parameter_value="15"/>
+			</parameter_set>
+		</storage>
+		
+		<link channel_capacity="400" node1="SW1" node2="SW2" port1="SW1_port_0" port2="SW2_port_2" service="0"/>
+		<link channel_capacity="200" node1="SW1" node2="SW3" port1="SW1_port_1" port2="SW3_port_2" service="0"/>
+		<link channel_capacity="200" node1="SW1" node2="SW4" port1="SW1_port_2" port2="SW4_port_2" service="0"/>
+		
+		
+		<link channel_capacity="200" node1="SW2" node2="SW5" port1="SW2_port_0" port2="SW5_port_2" service="0"/>
+		<link channel_capacity="200" node1="SW2" node2="SW6" port1="SW2_port_1" port2="SW6_port_2" service="0"/>
+		
+		<link channel_capacity="100" node1="SW5" node2="computer1" port1="SW5_port_0" port2="computer1_port_0" service="0"/>
+		<link channel_capacity="100" node1="SW5" node2="controller1" port1="SW5_port_1" port2="controller1_port_0" service="0"/>
+		
+		
+		<link channel_capacity="100" node1="SW6" node2="computer2" port1="SW6_port_0" port2="computer2_port_0" service="0"/>
+		<link channel_capacity="100" node1="SW6" node2="controller2" port1="SW6_port_1" port2="controller2_port_0" service="0"/>
+		
+		<link channel_capacity="100" node1="SW3" node2="computer3" port1="SW3_port_0" port2="computer3_port_0" service="0"/>
+		<link channel_capacity="100" node1="SW3" node2="controller3" port1="SW3_port_1" port2="controller3_port_0" service="0"/>
+		
+		<link channel_capacity="100" node1="SW4" node2="computer4" port1="SW4_port_0" port2="computer4_port_0" service="0"/>
+		<link channel_capacity="100" node1="SW4" node2="controller4" port1="SW4_port_1" port2="controller4_port_0" service="0"/>
+	</resources>
+	<tenants>
+		<tenant name="request1">
+			<list_of_nodes>
+				<vm name="VM1" assignedTo="computer1">
+					<connection_set number_of_ports="1">
+						<port name="VM1_port_0"/>
+					</connection_set>
+					<parameter_set>
+						<parameter parameter_name="VCPUs" parameter_type="integer" parameter_value="5"/>
+						<parameter parameter_name="RAM" parameter_type="integer" parameter_value="4000"/>
+					</parameter_set>
+				</vm>
+				<vm name="VM2" assignedTo="computer2">
+					<connection_set number_of_ports="1">
+						<port name="VM2_port_0"/>
+					</connection_set>
+					<parameter_set>
+						<parameter parameter_name="VCPUs" parameter_type="integer" parameter_value="5"/>
+						<parameter parameter_name="RAM" parameter_type="integer" parameter_value="4000"/>
+					</parameter_set>
+				</vm>
+				<st name="ST1">
+					<connection_set number_of_ports="1">
+						<port name="ST1_port_0"/>
+					</connection_set>
+					<parameter_set>
+						<parameter parameter_name="size" parameter_type="real" parameter_value="1"/>
+					</parameter_set>
+				</st>
+			</list_of_nodes>
+			<list_of_links>
+				<link channel_capacity="1" node1="VM1" node2="ST1" port1="VM1_port_0" port2="ST1_port_0" service="0"/>
+			</list_of_links>
+		</tenant>
+		<tenant name="request2">
+			<list_of_nodes>
+				<vm name="VM1" >
+					<connection_set number_of_ports="1">
+						<port name="VM1_port_0"/>
+					</connection_set>
+					<parameter_set>
+						<parameter parameter_name="VCPUs" parameter_type="integer" parameter_value="5"/>
+						<parameter parameter_name="RAM" parameter_type="integer" parameter_value="4000"/>
+					</parameter_set>
+				</vm>
+				<vm name="VM2" >
+					<connection_set number_of_ports="1">
+						<port name="VM2_port_0"/>
+					</connection_set>
+					<parameter_set>
+						<parameter parameter_name="VCPUs" parameter_type="integer" parameter_value="5"/>
+						<parameter parameter_name="RAM" parameter_type="integer" parameter_value="4000"/>
+					</parameter_set>
+				</vm>
+				<st name="ST1">
+					<connection_set number_of_ports="1">
+						<port name="ST1_port_0"/>
+					</connection_set>
+					<parameter_set>
+						<parameter parameter_name="size" parameter_type="real" parameter_value="1"/>
+					</parameter_set>
+				</st>
+			</list_of_nodes>
+			<list_of_links>
+				<link channel_capacity="1" node1="VM1" node2="ST1" port1="VM1_port_0" port2="ST1_port_0" service="0"/>
+			</list_of_links>
+		</tenant>
+		<tenant name="request3">
+			<list_of_nodes>
+				<vm name="VM1" >
+					<connection_set number_of_ports="1">
+						<port name="VM1_port_0"/>
+					</connection_set>
+					<parameter_set>
+						<parameter parameter_name="VCPUs" parameter_type="integer" parameter_value="5"/>
+						<parameter parameter_name="RAM" parameter_type="integer" parameter_value="4000"/>
+					</parameter_set>
+				</vm>
+				<vm name="VM2" >
+					<connection_set number_of_ports="1">
+						<port name="VM2_port_0"/>
+					</connection_set>
+					<parameter_set>
+						<parameter parameter_name="VCPUs" parameter_type="integer" parameter_value="5"/>
+						<parameter parameter_name="RAM" parameter_type="integer" parameter_value="4000"/>
+					</parameter_set>
+				</vm>
+				<st name="ST1">
+					<connection_set number_of_ports="1">
+						<port name="ST1_port_0"/>
+					</connection_set>
+					<parameter_set>
+						<parameter parameter_name="size" parameter_type="real" parameter_value="1"/>
+					</parameter_set>
+				</st>
+			</list_of_nodes>
+			<list_of_links>
+				<link channel_capacity="1" node1="VM1" node2="ST1" port1="VM1_port_0" port2="ST1_port_0" service="0"/>
+			</list_of_links>
+		</tenant>
+		
+	</tenants>
+</dcxml>

@@ -1,0 +1,15 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+PROJECT(trans)
+
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}
+      ../include/
+      ../interface/
+      )
+
+find_package( Qt5Core REQUIRED )
+
+FILE(GLOB SOURCES *.cpp)
+
+ADD_LIBRARY(${PROJECT_NAME} SHARED ${SOURCES})
+qt5_use_modules(${PROJECT_NAME} Core)

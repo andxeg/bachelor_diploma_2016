@@ -1,0 +1,11 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+PROJECT(common)
+
+find_package( Qt5Core REQUIRED )
+
+SET ( SOURCE_FILES
+      criteria.cpp
+      ${Qt5Core_INCLUDES}
+      )
+
+ADD_LIBRARY(${PROJECT_NAME} STATIC ${SOURCE_FILES})
